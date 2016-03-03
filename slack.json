@@ -1,7 +1,8 @@
 {
     "Content-Type": "application/json",
     "response_type": "in_channel",
-    "text": "It's 80 degrees right now.",
+    "text": "You called?",
+    "image_url": "http://weknowyourdreamz.com/images/kittens/kittens-05.jpg",
     "attachments": [
         {
             "text":"Partly cloudy today and tomorrow"
