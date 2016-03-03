@@ -1,6 +1,6 @@
 {
     "Content-Type": "application/json",
-    "response_type": "in_channel",.
+    "response_type": "in_channel",
     "attachments": [
         {
         "color" : "good",
