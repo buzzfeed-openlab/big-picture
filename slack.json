@@ -4,6 +4,7 @@
     "text": "You called?",
     "attachments": [
         {
+        "color" : "good",
         "image_url": "http://weknowyourdreamz.com/images/kittens/kittens-05.jpg"
         }
     ]
