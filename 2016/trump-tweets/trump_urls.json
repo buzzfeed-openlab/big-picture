@@ -11,6 +11,7 @@
     {"name":"instagram.com","size":102,"category":"social_media"},
     {"name":"youtube.com","size":61,"category":"social_media"},
     {"name":"periscope.tv","size":6,"category":"social_media"},
+    {"name":"vimeo.com","size":3,"category":"social_media"},
     {"name":"medium.com","size":3,"category":"social_media"},
     {"name":"snapchat.com","size":1,"category":"social_media"},
     {"name":"vine.co","size":1,"category":"social_media"}
@@ -238,7 +239,6 @@
       {"name":"livesigning.com","size":5,"category":"other"},
       {"name":"premierecollectibles.com","size":4,"category":"other"},
       {"name":"linkis.com","size":3,"category":"other"},
-      {"name":"vimeo.com","size":3,"category":"other"},
       {"name":"amazon.com","size":2,"category":"other"},
       {"name":"google.co.uk","size":2,"category":"other"},
       {"name":"blbrd.cm","size":1,"category":"other"},
