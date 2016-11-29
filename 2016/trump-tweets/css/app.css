@@ -243,3 +243,17 @@ text {
     margin-top: 5px;
     margin-right: 5px;
 }
+
+@media (max-width: 400px){
+  .legend {
+      margin: 0px 0px;
+      position: absolute;
+      background-color: #fff;
+      opacity: 0.75;
+      padding: 10px 10px;
+      border: 1px solid #ccc;
+  }
+  .caption{
+    font-size: 0.7em;
+  }
+}
