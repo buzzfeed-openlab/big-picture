@@ -1,0 +1,245 @@
+/*Chart colors*/
+
+.yellow1{color:#605D3A;}
+.yellow2{color:#BFBA73;}
+.yellow3{color:#FFEE00;}
+.yellow4{color:#FFF899;}
+.yellow5{color:#FFFCCC;}
+
+.orange1{color:#331F02;}
+.orange2{color:#673F05;}
+.orange3{color:#CE7D09;}
+.orange4{color:#D8973A;}
+.orange5{color:#EBCB9D;}
+
+.red1{color: #300906;}
+.red2{color: #75201A;}
+.red3{color: #E93F33;}
+.red4{color: #F28C85;}
+.red5{color: #FCE8E7;}
+
+.green1{color: #0A2C27;}
+.green2{color: #15574D;}
+.green3{color: #01f7b6;}
+.green4{color: #7FCEC2;}
+.green5{color: #D4EFEB;}
+
+.blue1{color: #001E3C;}
+.blue2{color: #003C77;}
+.blue3{color: #0077EE;}
+.blue4{color: #66ADF5;}
+.blue5{color: #CCE4FC;}
+
+
+.yellow1-bg{background-color:#605D3A;}
+.yellow2-bg{background-color:#BFBA73;}
+.yellow3-bg{background-color:#FFEE00;}
+.yellow4-bg{background-color:#FFF899;}
+.yellow5-bg{background-color:#FFFCCC;}
+
+.orange1-bg{background-color:#331F02;}
+.orange2-bg{background-color:#673F05;}
+.orange3-bg{background-color:#CE7D09;}
+.orange4-bg{background-color:#D8973A;}
+.orange5-bg{background-color:#EBCB9D;}
+
+.red1-bg{background-color: #300906;}
+.red2-bg{background-color: #75201A;}
+.red3-bg{background-color: #E93F33;}
+.red4-bg{background-color: #F28C85;}
+.red5-bg{background-color: #FCE8E7;}
+
+.green1-bg{background-color: #0A2C27;}
+.green2-bg{background-color: #15574D;}
+.green3-bg{background-color: #01f7b6;}
+.green4-bg{background-color: #7FCEC2;}
+.green5-bg{background-color: #D4EFEB;}
+
+.blue1-bg{background-color: #001E3C;}
+.blue2-bg{background-color: #003C77;}
+.blue3-bg{background-color: #0077EE;}
+.blue4-bg{background-color: #66ADF5;}
+.blue5-bg{background-color: #CCE4FC;}
+
+
+
+/* your code here | this overwrites foundation */
+
+body{
+	background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family:"Caponi-Slab-Semibold","Proxima Nova",Helvetica,Arial,sans-serif;
+	
+}
+
+/*app specific*/
+
+h1{
+	text-align: center;
+    padding-top: 5%;
+    font-size: 2em;
+    font-weight: 600;
+    color: #8a8a8a; 
+}
+
+#chart{
+    width:100%;
+
+}
+
+.blog_node, 
+.social_media_node,
+.content_node,
+.other_node,
+.trumpurls_node,
+.campaign_node{
+    display:none;
+    opacity:0;
+}
+
+.trumpurls_node--circle{
+    fill:#fff;
+/*    stroke-width: 1px;
+    stroke:#ccc;*/
+}
+
+circle {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+
+.circle.node.large {
+    fill: #fbfbfb !important;
+}
+
+.circle.node.large:hover {
+    fill: #ccc !important;
+}
+
+
+.blog{ fill:#75201A;}
+.social_media{ fill:#F28C85;}
+.content_producer{ fill:#E93F33;}
+.other{ fill:#ccc;}
+.campaign{ fill:#300906;}
+
+text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+
+.d3-label {
+  display: inline-block;
+  padding: 0.33333rem 0.5rem;
+  font-size: 0.65rem;
+  fill: #ffffff;
+  font-family: Helvetica, serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 1px 1px #4a4a4a;
+
+}
+
+
+/*tooltips and legend*/
+.notdefault{
+  pointer-events:none;
+}
+
+.legend{
+    margin: 25px 0px;
+    position:absolute;
+    background-color: #fff;
+    opacity: 0.75;
+    padding:20px 15px;
+    border: 1px solid #ccc;
+}
+
+.legend-box{
+    float:left;
+    width:200px;
+}
+
+.legend img{
+    float: left;
+    width:50px;
+}
+
+.legend .caption{
+    clear: none;
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
+
+.legend-percent {
+    z-index: -99;
+  cursor-events:none;
+  width:200px;
+  position: absolute;
+  padding-top: 75px;
+  padding-left:50px;
+}
+
+.tooltip {
+  opacity:0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0;
+  border: 1px solid #ccc;
+  color: #888;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  padding: 0px 15px;
+  margin:0;
+  font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+  width:250px;
+}
+
+.tooltip strong{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.annotations{ 
+    fill:#777777;
+    font-size: 12px;
+}
+
+.annotations path{
+    stroke:#888;
+}
+
+.axislabel{
+    fill:#777777;
+    font-size:0.8em;
+}
+
+/*Source line, legend etc. */
+
+.caption{
+  font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+  clear: both;
+  font-size: .8em;
+  color: #777777;
+  margin-top: 1.875em;
+  line-height: 1.5em;
+}
+
+.circle{
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    float: left;
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 5px;
+}
