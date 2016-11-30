@@ -335,6 +335,7 @@ text {
   .iframe p{
     font-size: 0.75em;
     line-height: 1.5em;
+    margin-bottom: 0.5rem;
   }
   .iframe h1{
     font-size: 1.5em;
@@ -344,11 +345,12 @@ text {
       margin: 0px 0px;
       position: absolute;
       background-color: #fff;
-      opacity: 0.75;
-      padding: 10px 10px;
+      opacity: 0.7;
+      padding: 5px 10px 5px 0px;
       border: 1px solid #ccc;
   }
   .caption{
     font-size: 0.65em;
+    margin-top: 0px;
   }
 }
