@@ -25,13 +25,6 @@ $(document).ready(function(){
 	    .size([diameter - margin, diameter - margin])
 	    .padding(2);
 
-	// for tooltips
-	var tooltip = d3.select("body")
-		.append("div")
-		.attr("class", "tooltip");
-
-	
-
 	// load data
 	d3.json("trump_urls.json", function(error, root) {
 	  if (error) throw error;
@@ -50,42 +43,71 @@ $(document).ready(function(){
 				      .attr("class", function(d) { return d.parent ? d.children ? "node large" : "node node--leaf "  + d.data.category: "node node--root"; })
 				      .style("fill", function(d) { return d.children ? '#fff' : null; })
 				      .style("stroke", function(d) { return d.children ? '#fff' : null; })
-				      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
-
+				      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); })
 
 	  var text = g.selectAll(".d3-label")
-	    .data(nodes)
-	    .enter().append("text")
-	      	.attr("class", function(d){ 
-		      	if (d.data.classname) {
-		      		return d.data.name + " d3-label " + d.data.classname;
-		      	} else if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
-		      		return d.data.name +" d3-label notdefault";
-		      	} else {
-		      			return d.data.name + " d3-label";
+				    .data(nodes)
+				    .enter().append("text")
+				      	.attr("class", function(d){ 
+					      	if (d.data.classname) {
+					      		return d.data.category + " d3-label " + d.data.classname;
+					      	} else if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
+					      		return d.data.category +" d3-label notdefault";
+					      	} else {
+					      			return d.data.category + " d3-label";
 
-		      	}
-	  		})
-			.attr("opacity", function(d) { 
-				if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
-					return 0;  
-				} else{
-					return 1;
-				}
-				
-			})
-			.text(function(d) {
-				return d.data.name; 
-				
+					      	}
+				  		})
+						.attr("opacity", function(d) { 
+							if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
+								return 0;  
+							} else{
+								return 1;
+							}
+							
+						})
+						.text(function(d) {
+							return d.data.name; 
+							
+						});
+
+		var numberLabel = g.selectAll(".d3-number-label")
+							.data(nodes)
+						    .enter().append("text")
+						      	.attr("class", function(d){ 
+							      	if (d.data.classname) {
+							      		return d.data.category + " d3-number-label " + d.data.classname;
+							      	} else if (d.data.size < labelCutoff){
+							      		return d.data.category +" d3-number-label notdefault";
+							      	} else {
+							      			return d.data.category + " d3-number-label";
+
+							      	}
+						  		})
+								.attr("opacity", function(d) { 
+									if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
+										return 0;  
+									} else{
+										return 1;
+									}
+									
+								})
+								.attr("y", 10)
+								.text(function(d) {
+									return "(" + format(d.data.size) + ")"; 
+									
+								});
+
+	  	var node = g.selectAll("circle,text");
+
+
+
+		svg.on("click", function() { 
+				zoom(root); 
 			});
 
-	  var node = g.selectAll("circle,text");
-
-	  svg.on("click", function() { 
-	  		zoom(root); 
-	  	});
-
 	  zoomTo([root.x, root.y, root.r * 2 + margin]);
+
 
 	  function zoom(d) {
 	    var focus0 = focus; focus = d;
@@ -111,7 +133,6 @@ $(document).ready(function(){
 	    var k = diameter / v[2]; view = v;
 	    node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
 	    circle.attr("r", function(d) { return d.r * k; });
-
 
 	  }
 

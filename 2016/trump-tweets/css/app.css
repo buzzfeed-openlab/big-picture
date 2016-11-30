@@ -125,11 +125,11 @@ circle {
 }
 
 
-.blog{ fill:#75201A;}
+.blog{ fill:#300906;}
 .social_media{ fill:#F28C85;}
 .content_producer{ fill:#E93F33;}
 .other{ fill:#ccc;}
-.campaign{ fill:#300906;}
+.campaign{ fill:#FCE8E7;}
 
 text {
   font: 10px sans-serif;
@@ -137,15 +137,30 @@ text {
 }
 
 
-.d3-label {
-  display: inline-block;
-  padding: 0.33333rem 0.5rem;
-  font-size: 0.65rem;
-  fill: #ffffff;
-  font-family: Helvetica, serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  text-shadow: 1px 1px #4a4a4a;
+.d3-label,
+.d3-number-label {
+    display: inline-block;
+    padding: 0.33333rem 0.5rem;
+    fill: #4a4a4a;
+    font-family: Helvetica, serif;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+
+}
+
+.d3-label.content_producer,
+.d3-label.blog,
+.d3-number-label.content_producer,
+.d3-number-label.blog{
+  fill: #fff;
+  text-shadow: 1px 2px #3c3b3b;
+}
+
+.d3-label{
+  font-size: 0.7rem;
+}
+.d3-number-label {
+  font-size: 0.6rem;
 
 }
 
@@ -223,7 +238,79 @@ text {
     font-size:0.8em;
 }
 
-/*Source line, legend etc. */
+/*Source line, legend, tooltip, etc. */
+.circle{
+    stroke-width:1px;
+    stroke: #fff;
+}
+
+.y.axis line,
+.y.axis path,
+.x.axis line,
+.x.axis path,
+.x2.axis line,
+.x2.axis path {
+  fill: none;
+  stroke: #ccc;
+}
+
+.y.axis path{
+    stroke:none;
+}
+
+.axis text {
+    font-family: "Open Sans",Helvetica, Arial, sans-serif;
+    fill:#888;
+    font-size: 12px;
+}
+
+.legend{
+    margin: 0px 0px;
+}
+
+.legend-box{
+    float:left;
+    width:250px;
+}
+
+
+.legend .caption{
+    clear: none;
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
+
+.legend-percent {
+    z-index: -99;
+  cursor-events:none;
+  width:200px;
+  position: absolute;
+
+}
+
+.d3-tooltip {
+  opacity:0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0;
+  border: 1px solid #ccc;
+  color: #888;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  padding: 0px 15px;
+  margin:0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width:250px;
+}
+
+.d3-tooltip strong{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.d3-tooltip td{
+  border:none;
+}
 
 .caption{
   font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
