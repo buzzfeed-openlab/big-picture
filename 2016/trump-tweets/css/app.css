@@ -383,4 +383,8 @@ text {
   .desktop{
     display:none;
   }
+
+  .columns{
+    padding:0px 5px;
+  }
 }
