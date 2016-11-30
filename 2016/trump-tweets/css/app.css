@@ -332,6 +332,14 @@ text {
 }
 
 @media (max-width: 400px){
+  .iframe p{
+    font-size: 0.75em;
+    line-height: 1.5em;
+  }
+  .iframe h1{
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
   .legend {
       margin: 0px 0px;
       position: absolute;
