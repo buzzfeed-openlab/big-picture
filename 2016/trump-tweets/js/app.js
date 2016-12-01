@@ -31,7 +31,7 @@ $(document).ready(function(){
 	    .padding(2);
 
 	// load data
-	d3.json("trump_urls.json", function(error, root) {
+	d3.json("https://buzzfeed-openlab.github.io/big-picture/2016/trump-tweets/trump_urls.json", function(error, root) {
 	  if (error) throw error;
 
 	  root = d3.hierarchy(root)
