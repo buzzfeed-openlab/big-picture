@@ -4,8 +4,6 @@ $(document).ready(function(){
 	var svg = d3.select("svg"),
 		windowWidth = window.innerWidth;
 
-		$("#chart").width(windowWidth);
-
 	var width = $("#chart").width(),
 		margin = 20,
 	    diameter = width,
