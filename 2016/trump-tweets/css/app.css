@@ -112,6 +112,11 @@ h1{
 circle {
   stroke: #fff;
   stroke-width: 1px;
+  cursor: pointer;
+}
+
+circle:hover{
+  opacity:0.75;
 }
 
 .leaf circle {
@@ -335,6 +340,19 @@ text {
     display: inline-block;
     margin-top: 5px;
     margin-right: 5px;
+}
+
+.node--root {
+    stroke: #fff !important;
+    fill:#fff;
+}
+
+.large {
+  fill: #f9f9f9;
+}
+
+.large:hover{
+  fill:#ccc;
 }
 
 /* mobile and desktop stuff */

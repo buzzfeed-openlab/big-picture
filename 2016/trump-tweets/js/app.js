@@ -41,8 +41,8 @@ $(document).ready(function(){
 				    .data(nodes)
 				    .enter().append("circle")
 				      .attr("class", function(d) { return d.parent ? d.children ? "node large" : "node node--leaf "  + d.data.category: "node node--root"; })
-				      .style("fill", function(d) { return d.children ? '#fff' : null; })
-				      .style("stroke", function(d) { return d.children ? '#fff' : null; })
+				      // .style("fill", function(d) { return d.children ? '#fff' : null; })
+				      // .style("stroke", function(d) { return d.children ? '#ccc' : null; })
 				      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); })
 
 	  var text = g.selectAll(".d3-label")
