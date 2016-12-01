@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 
 		
 	var svg = d3.select("svg"),
@@ -10,8 +10,6 @@
 	    // g = svg.append("g").attr("transform", "translate(2,2)"),
    		g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")")
    		format = d3.format(",d");
-
-   
 
 
 
@@ -145,4 +143,4 @@
 			
 
 
-// });
+});
