@@ -170,7 +170,9 @@ text {
 
 
 /*tooltips and legend*/
-.notdefault{
+.notdefault, 
+.d3-label, 
+.d3-number-label{
   pointer-events:none;
 }
 
