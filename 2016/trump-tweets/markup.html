@@ -1,0 +1,596 @@
+<style type='text/css'>
+
+/*Chart colors*/
+
+.yellow1{color:#605D3A;}
+.yellow2{color:#BFBA73;}
+.yellow3{color:#FFEE00;}
+.yellow4{color:#FFF899;}
+.yellow5{color:#FFFCCC;}
+
+.orange1{color:#331F02;}
+.orange2{color:#673F05;}
+.orange3{color:#CE7D09;}
+.orange4{color:#D8973A;}
+.orange5{color:#EBCB9D;}
+
+.red1{color: #300906;}
+.red2{color: #75201A;}
+.red3{color: #E93F33;}
+.red4{color: #F28C85;}
+.red5{color: #FCE8E7;}
+
+.green1{color: #0A2C27;}
+.green2{color: #15574D;}
+.green3{color: #01f7b6;}
+.green4{color: #7FCEC2;}
+.green5{color: #D4EFEB;}
+
+.blue1{color: #001E3C;}
+.blue2{color: #003C77;}
+.blue3{color: #0077EE;}
+.blue4{color: #66ADF5;}
+.blue5{color: #CCE4FC;}
+
+
+.yellow1-bg{background-color:#605D3A;}
+.yellow2-bg{background-color:#BFBA73;}
+.yellow3-bg{background-color:#FFEE00;}
+.yellow4-bg{background-color:#FFF899;}
+.yellow5-bg{background-color:#FFFCCC;}
+
+.orange1-bg{background-color:#331F02;}
+.orange2-bg{background-color:#673F05;}
+.orange3-bg{background-color:#CE7D09;}
+.orange4-bg{background-color:#D8973A;}
+.orange5-bg{background-color:#EBCB9D;}
+
+.red1-bg{background-color: #300906;}
+.red2-bg{background-color: #75201A;}
+.red3-bg{background-color: #E93F33;}
+.red4-bg{background-color: #F28C85;}
+.red5-bg{background-color: #FCE8E7;}
+
+.green1-bg{background-color: #0A2C27;}
+.green2-bg{background-color: #15574D;}
+.green3-bg{background-color: #01f7b6;}
+.green4-bg{background-color: #7FCEC2;}
+.green5-bg{background-color: #D4EFEB;}
+
+.blue1-bg{background-color: #001E3C;}
+.blue2-bg{background-color: #003C77;}
+.blue3-bg{background-color: #0077EE;}
+.blue4-bg{background-color: #66ADF5;}
+.blue5-bg{background-color: #CCE4FC;}
+
+
+
+/* your code here | this overwrites foundation */
+
+body{
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family:"Caponi-Slab-Semibold","Proxima Nova",Helvetica,Arial,sans-serif;
+  
+}
+
+p{
+  font-family:'Proxima Nova', Helvetica, sans-serif;
+}
+
+/*app specific*/
+
+h1{
+  text-align: center;
+    padding-top: 5%;
+    font-size: 2em;
+    font-weight: 600;
+    color: #8a8a8a; 
+}
+
+#chart{
+    width:100%;
+}
+
+.blog_node, 
+.social_media_node,
+.content_node,
+.other_node,
+.trumpurls_node,
+.campaign_node{
+    display:none;
+    opacity:0;
+}
+
+.trumpurls_node--circle{
+    fill:#fff;
+/*    stroke-width: 1px;
+    stroke:#ccc;*/
+}
+
+circle {
+  stroke: #fff;
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+circle:hover{
+  opacity:0.75;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+
+.circle.node.large {
+    fill: #fbfbfb !important;
+}
+
+.circle.node.large:hover {
+    fill: #ccc !important;
+}
+
+
+.blog{ fill:#300906;}
+.social_media{ fill:#F28C85;}
+.content_producer{ fill:#b33c33;}
+.other{ fill:#ccc;}
+.campaign{ fill:#FCE8E7;}
+
+text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+
+.d3-label,
+.d3-number-label {
+    display: inline-block;
+    padding: 0.33333rem 0.5rem;
+    fill: #4a4a4a;
+    font-family: Helvetica, serif;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+
+}
+
+.d3-label.content_producer,
+.d3-label.blog,
+.d3-number-label.content_producer,
+.d3-number-label.blog{
+  fill: #fff;
+  text-shadow: 1px 2px #3c3b3b;
+}
+
+.d3-label{
+  font-size: 0.7rem;
+}
+.d3-number-label {
+  font-size: 0.6rem;
+
+}
+
+
+/*tooltips and legend*/
+.notdefault, 
+.d3-label, 
+.d3-number-label{
+  pointer-events:none;
+}
+
+.legend{
+    margin: 25px 0px;
+    position:absolute;
+    background-color: #fff;
+    opacity: 0.75;
+    padding:20px 15px;
+    border: 1px solid #ccc;
+}
+
+.legend-box{
+    float:left;
+    width:200px;
+}
+
+.legend img{
+    float: left;
+    width:50px;
+}
+
+.legend .caption{
+    clear: none;
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
+
+.legend-percent {
+    z-index: -99;
+  cursor-events:none;
+  width:200px;
+  position: absolute;
+  padding-top: 75px;
+  padding-left:50px;
+}
+
+.tooltip {
+  opacity:0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0;
+  border: 1px solid #ccc;
+  color: #888;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  padding: 0px 15px;
+  margin:0;
+  font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+  width:250px;
+}
+
+.tooltip strong{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.annotations{ 
+    fill:#777777;
+    font-size: 12px;
+}
+
+.annotations path{
+    stroke:#888;
+}
+
+.axislabel{
+    fill:#777777;
+    font-size:0.8em;
+}
+
+/*Source line, legend, tooltip, etc. */
+.circle{
+    stroke-width:1px;
+    stroke: #fff;
+}
+
+.y.axis line,
+.y.axis path,
+.x.axis line,
+.x.axis path,
+.x2.axis line,
+.x2.axis path {
+  fill: none;
+  stroke: #ccc;
+}
+
+.y.axis path{
+    stroke:none;
+}
+
+.axis text {
+    font-family: "Open Sans",Helvetica, Arial, sans-serif;
+    fill:#888;
+    font-size: 12px;
+}
+
+.legend{
+    margin: 0px 0px;
+}
+
+.legend-box{
+    float:left;
+    width:250px;
+}
+
+
+.legend .caption{
+    clear: none;
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
+
+.legend-percent {
+    z-index: -99;
+  cursor-events:none;
+  width:200px;
+  position: absolute;
+
+}
+
+.d3-tooltip {
+  opacity:0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0;
+  border: 1px solid #ccc;
+  color: #888;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  padding: 0px 15px;
+  margin:0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width:250px;
+}
+
+.d3-tooltip strong{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.d3-tooltip td{
+  border:none;
+}
+
+.caption{
+  font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+  clear: both;
+  font-size: .8em;
+  color: #777777;
+  margin-top: 1.875em;
+  line-height: 1.5em;
+}
+
+.circle{
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    float: left;
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.node--root {
+    stroke: #fff !important;
+    fill:#fff;
+}
+
+.large {
+  fill: #f9f9f9;
+}
+
+.large:hover{
+  fill:#ccc;
+}
+
+/* mobile and desktop stuff */
+
+.mobile{
+  display:none;
+}
+
+.desktop{
+  display: inline-block;
+}
+
+.columns{
+  padding:0px;
+}
+
+@media (max-width: 400px){
+
+  .iframe p{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    margin-bottom: 0.5rem;
+  }
+  .iframe h1{
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+  .legend {
+      margin: 0px 0px;
+      position: absolute;
+      background-color: #fff;
+      opacity: 0.7;
+      padding: 5px 10px 5px 0px;
+      border: 1px solid #ccc;
+      width: 100%;
+      float: left;
+      position: relative;
+  }
+  .caption{
+    font-size: 0.65em;
+    margin-top: 0px;
+  }
+  .legend-item{
+    width:50%;
+    float:left;
+  }
+
+  .mobile{
+    display:inline-block;
+  }
+
+  .desktop{
+    display:none;
+  }
+
+  .columns{
+    padding:0px 15px;
+  }
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type='text/javascript' src="https://d3js.org/d3.v4.js"></script>
+
+
+  <div class="row">
+      <div class="large-12 columns iframe">
+
+        <div class="legend"> 
+            <div class="caption legend-item"><span class="circle red5-bg"></span> Campaign-related sites</div>
+            <div class="caption legend-item"><span class="circle red4-bg"></span> Social Media</div>
+            <div class="caption legend-item"><span class="circle" style="background-color: #b33c33;"></span> Media</div>
+            <div class="caption legend-item"><span class="circle red1-bg"></span> Blogs</div>
+            <div class="caption legend-item"><span class="circle" style="background-color:#ccc"></span> Other</div>
+            <div class="caption legend-item desktop" style="padding-top:10px"><em>Click to zoom</em></div>
+            <div class="caption legend-item mobile"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i> <em>Click to zoom</em></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="large-12 medium-12 small-12 columns">
+       
+        
+        <div id="chart">
+            <!-- Content goes in here. -->
+            <svg></svg>
+        </div>
+      </div>
+    </div>
+
+<script type='text/javascript'>
+
+var svg = d3.select("svg"),
+    windowWidth = window.innerWidth;
+
+    $("#chart").width(windowWidth);
+
+  var width = $("#chart").width(),
+    margin = 20,
+      diameter = width,
+      // g = svg.append("g").attr("transform", "translate(2,2)"),
+      g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")")
+      format = d3.format(",d");
+
+   
+
+
+
+    var labelCutoff; 
+  if (windowWidth > 400){
+    labelCutoff = 20
+  } else{
+    labelCutoff = 50
+  }
+
+    svg.attr("width", width).attr("height", width);
+
+
+    // set up pack layout
+  var pack = d3.pack()
+      .size([diameter - margin, diameter - margin])
+      .padding(2);
+
+  // load data
+  d3.json("https://buzzfeed-openlab.github.io/big-picture/2016/trump-tweets/trump_urls.json", function(error, root) {
+  d3.json("trump_urls.json", function(error, root) {
+    if (error) throw error;
+
+    root = d3.hierarchy(root)
+          .sum(function(d) { return d.size; })
+          .sort(function(a, b) { return b.value - a.value; });
+
+    var focus = root,
+        nodes = pack(root).descendants(),
+        view;
+
+    var circle = g.selectAll("circle")
+            .data(nodes)
+            .enter().append("circle")
+              .attr("class", function(d) { return d.parent ? d.children ? "node large" : "node node--leaf "  + d.data.category: "node node--root"; })
+              // .style("fill", function(d) { return d.children ? '#fff' : null; })
+              // .style("stroke", function(d) { return d.children ? '#ccc' : null; })
+              .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); })
+
+    var text = g.selectAll(".d3-label")
+            .data(nodes)
+            .enter().append("text")
+                .attr("class", function(d){ 
+                  if (d.data.classname) {
+                    return d.data.category + " d3-label " + d.data.classname;
+                  } else if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
+                    return d.data.category +" d3-label notdefault";
+                  } else {
+                      return d.data.category + " d3-label";
+
+                  }
+              })
+            .attr("opacity", function(d) { 
+              if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
+                return 0;  
+              } else{
+                return 1;
+              }
+              
+            })
+            .text(function(d) {
+              return d.data.name; 
+              
+            });
+
+    var numberLabel = g.selectAll(".d3-number-label")
+              .data(nodes)
+                .enter().append("text")
+                    .attr("class", function(d){ 
+                      if (d.data.classname) {
+                        return d.data.category + " d3-number-label " + d.data.classname;
+                      } else if (d.data.size < labelCutoff){
+                        return d.data.category +" d3-number-label notdefault";
+                      } else {
+                          return d.data.category + " d3-number-label";
+
+                      }
+                  })
+                .attr("opacity", function(d) { 
+                  if (d.data.size < labelCutoff || d.data.name == "washingtonpost.com"){
+                    return 0;  
+                  } else{
+                    return 1;
+                  }
+                  
+                })
+                .attr("y", 10)
+                .text(function(d) {
+                  return "(" + format(d.data.size) + ")"; 
+                  
+                });
+
+      var node = g.selectAll("circle,text");
+
+
+
+    svg.on("click", function() { 
+        zoom(root); 
+      });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+
+    function zoom(d) {
+      var focus0 = focus; focus = d;
+
+      var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function(d) {
+              var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+              return function(t) { zoomTo(i(t)); };
+            });
+
+    if (focus.height < 1){
+      transition.selectAll('.notdefault')
+        .attr("opacity", 1)
+    } else if (focus.height == 2){
+      transition.selectAll('.notdefault')
+        .attr("opacity", 0)
+    }
+
+    }
+
+    function zoomTo(v) {
+      var k = diameter / v[2]; view = v;
+      node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+      circle.attr("r", function(d) { return d.r * k; });
+
+    }
+
+  });
+
+</script>
