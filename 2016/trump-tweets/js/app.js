@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 
 		
 	var svg = d3.select("svg"),
@@ -145,4 +145,4 @@
 			
 
 
-// });
+});
