@@ -2,13 +2,20 @@ $(document).ready(function(){
 
 		
 	var svg = d3.select("svg"),
-		windowWidth = window.innerWidth,
-		width = $("#chart").width(),
+		windowWidth = window.innerWidth;
+
+		$("#chart").width(windowWidth);
+
+	var width = $("#chart").width(),
 		margin = 20,
 	    diameter = width,
 	    // g = svg.append("g").attr("transform", "translate(2,2)"),
    		g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")")
    		format = d3.format(",d");
+
+   
+
+
 
    	var labelCutoff; 
 	if (windowWidth > 400){
