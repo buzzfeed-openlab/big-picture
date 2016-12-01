@@ -177,7 +177,9 @@ text {
 .notdefault, 
 .d3-label, 
 .d3-number-label{
-  pointer-events:none;
+  pointer-events: none;
+  font-family: 'Proxima Nova', helvetica, arial, sans-serif;
+
 }
 
 .legend{
