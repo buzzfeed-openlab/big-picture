@@ -1,6 +1,7 @@
-body {font-size:14px;}
+body {font-size:15px;font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+	font-weight: 100;}
 .serif {font-family:Georgia, serif;}
-.sans {font-family:Arial, sans-serif;}
+.sans {font-family:Helvetica, Arial, sans-serif;}
 .rss {position: absolute; right:0; top:45%;}
 h1.index {font-size:28px;}
 #header {margin:15px 0 0 0;}
@@ -48,3 +49,31 @@ h1#title {margin:0 0 5px 0; font-size:28px;}
 #table_fu div.bullet-graph-box4 { position: absolute; height: 20px; width: 10%; left: 90%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
 #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
 #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
+
+td {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    color: #2d2d2d;
+    font-weight: 100;
+}
+
+#table_fu td, #table_fu th {
+    padding: 7px;
+    border-bottom: 2px dotted #c1c1c1;
+    text-align: center;
+}
+
+h1#title {
+    margin: 0 0 5px 0;
+    font-size: 28px;
+    font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+    color: #403f3f;
+}
+thead th {
+    font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+    color: #313131;
+    font-size: 1.2em;
+}
+#ribbon{
+	font-size:15px;
+}
