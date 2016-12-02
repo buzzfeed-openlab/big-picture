@@ -122,7 +122,7 @@ $(document).ready(function(){
 
 	  	var node = g.selectAll("circle,text");
 	  	//The data for our line
-		var lineDataDesktop = [ { "x":300,   "y": 130},  { "x": 300,  "y": 150}];
+		var lineDataDesktop = [ { "x":300,   "y": 133},  { "x": 300,  "y": 150}];
 		var lineDataMobile = [ { "x":75,   "y": 60},  { "x": 75,  "y": 80}];
 
 		var lineData;
