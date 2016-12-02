@@ -93,13 +93,21 @@ h1{
 }
 
 .blog_node, 
-.social_media_node,
 .content_node,
 .other_node,
 .trumpurls_node,
 .campaign_node{
     display:none;
     opacity:0;
+}
+
+.social_media_node{
+  font-style: italic;
+  
+}
+
+.social_media_node.d3-number-label{
+  display:none;
 }
 
 .trumpurls_node--circle{

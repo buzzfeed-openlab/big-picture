@@ -69,8 +69,27 @@ $(document).ready(function(){
 							}
 							
 						})
+						.attr("y", function(d){
+							if (d.data.classname == "social_media_node" && windowWidth<401){
+								return -120
+							} else if (d.data.classname == "social_media_node" && windowWidth>401){
+								return -230
+							}
+						})
+						.attr("x", function(d){
+							if (d.data.classname == "social_media_node" && windowWidth<401){
+								return 75
+							} else if (d.data.classname == "social_media_node" && windowWidth>401){
+								return 200
+							}
+						})
 						.text(function(d) {
-							return d.data.name; 
+							if (d.data.classname == "social_media_node"){
+								return "Shared social links include retweets and Facebook posts."
+							} else {
+								return d.data.name; 
+							}
+							
 							
 						});
 
@@ -102,6 +121,31 @@ $(document).ready(function(){
 								});
 
 	  	var node = g.selectAll("circle,text");
+	  	//The data for our line
+		var lineDataDesktop = [ { "x":300,   "y": 120},  { "x": 300,  "y": 150}];
+		var lineDataMobile = [ { "x":75,   "y": 60},  { "x": 75,  "y": 80}];
+
+		var lineData;
+
+		if (windowWidth>401){
+			lineData = lineDataDesktop;
+		}else{
+			lineData = lineDataMobile;
+		}
+
+		//This is the accessor function we talked about above
+		var lineFunction = d3.line()
+		                         .x(function(d) { return d.x; })
+		                         .y(function(d) { return d.y; });
+		             
+
+	  	//The line SVG Path for annotation
+ 		var lineGraph = svg.append("path")
+							.attr("d", lineFunction(lineData))
+							.attr("stroke", "#888")
+							.attr("stroke-width", 1)
+							.attr("fill", "none")
+							.attr("class", "social_media_node");
 
 
 
@@ -122,12 +166,16 @@ $(document).ready(function(){
 		          return function(t) { zoomTo(i(t)); };
 		        });
 
-		if (focus.height < 1){
+		if (focus.height < 1 ||focus.height == 1 ){
 			transition.selectAll('.notdefault')
-				.attr("opacity", 1)
+				.attr("opacity", 1);
+			transition.selectAll('.social_media_node')
+				.attr("opacity", 0);
 		} else if (focus.height == 2){
 			transition.selectAll('.notdefault')
-				.attr("opacity", 0)
+				.attr("opacity", 0);
+				transition.selectAll('.social_media_node')
+				.attr("opacity", 1);
 		}
 
 	  }
