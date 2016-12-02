@@ -70,16 +70,16 @@ $(document).ready(function(){
 							
 						})
 						.attr("y", function(d){
-							if (d.data.classname == "social_media_node" && windowWidth<401){
+							if (d.data.classname == "social_media_node" && windowWidth<400){
 								return -120
-							} else if (d.data.classname == "social_media_node" && windowWidth>401){
+							} else if (d.data.classname == "social_media_node" && windowWidth>400){
 								return -230
 							}
 						})
 						.attr("x", function(d){
-							if (d.data.classname == "social_media_node" && windowWidth<401){
+							if (d.data.classname == "social_media_node" && windowWidth<400){
 								return 75
-							} else if (d.data.classname == "social_media_node" && windowWidth>401){
+							} else if (d.data.classname == "social_media_node" && windowWidth>400){
 								return 200
 							}
 						})
@@ -122,12 +122,12 @@ $(document).ready(function(){
 
 	  	var node = g.selectAll("circle,text");
 	  	//The data for our line
-		var lineDataDesktop = [ { "x":300,   "y": 120},  { "x": 300,  "y": 150}];
+		var lineDataDesktop = [ { "x":300,   "y": 130},  { "x": 300,  "y": 150}];
 		var lineDataMobile = [ { "x":75,   "y": 60},  { "x": 75,  "y": 80}];
 
 		var lineData;
 
-		if (windowWidth>401){
+		if (windowWidth>400){
 			lineData = lineDataDesktop;
 		}else{
 			lineData = lineDataMobile;
