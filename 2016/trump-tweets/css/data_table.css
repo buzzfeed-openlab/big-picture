@@ -1,0 +1,35 @@
+/*custom styles*/
+body{
+	background-color: #fff;
+	font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family:"Caponi-Slab-Semibold","Proxima Nova",Helvetica,Arial,sans-serif;
+	
+}
+
+p{
+  font-family:'Proxima Nova', Helvetica, sans-serif;
+}
+
+#tweet_table th {
+    text-align: left;
+    font-weight: normal;
+    color: #383838;
+}
+
+.tweet_header{width:65%;}
+.date_header{width:20%;}
+.link_header{width:15%;}
+
+table tbody tr:nth-child(even) {
+	background-color: #fff;
+}
+table tbody tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+th{
+		border-bottom: 1px #ccc solid;
+}
