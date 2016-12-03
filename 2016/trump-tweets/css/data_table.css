@@ -33,3 +33,24 @@ table tbody tr:nth-child(odd) {
 th{
 		border-bottom: 1px #ccc solid;
 }
+
+label {
+    padding: 15px 0px;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    width: 75px;
+    border-radius: 7px;
+    margin: 0px 7px;
+    height: 2.5em;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    display: inline-block !important;
+    width: auto !important;
+    margin-bottom: 0;
+    margin-left: 0.5em;
+    margin: 0px 7px;
+    height: 2.5em;
+    border-radius: 7px;
+}
