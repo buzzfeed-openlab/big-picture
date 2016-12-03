@@ -54,3 +54,12 @@ div.dataTables_wrapper div.dataTables_filter input {
     height: 2.5em;
     border-radius: 7px;
 }
+
+a#table_previous {padding-right: 10px;}
+a#table_next {padding-left: 10px;}
+a.paginate_button {padding: 0px 5px;}
+a#table_previous,
+a#table_next,
+a.paginate_button{
+	font-weight: 500;
+}
