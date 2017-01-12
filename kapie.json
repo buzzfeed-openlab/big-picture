@@ -1,0 +1,11 @@
+{
+    "Content-Type": "application/json",
+    "response_type": "in_channel",
+    "attachments": [
+        {
+        "color" : "good",
+        "image_url": "http://buzzfeed-openlab.github.io/big-picture/kitten.jpg",
+        "text" : "Goatse, anyone? "
+        }
+    ]
+}
