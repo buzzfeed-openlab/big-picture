@@ -4,7 +4,7 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 
-#Twitter API credentials
+#Twitter API credentials, you can get them here https://apps.twitter.com/
 consumer_key = ""
 consumer_secret = ""
 access_key = ""
