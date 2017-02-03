@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
-# import dependencies 
+# import dependencies
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 
@@ -25,14 +25,14 @@ usernames = [
 
 
 # open spreadsheet and add column heads
-with open('userinfo.csv', 'wb') as f:
+with open('userinfo.csv', 'w+') as f:
 		writer = csv.writer(f)
 		writer.writerow(["name",
 					"display_name",
 					"bio",
-					"followers_count", 
+					"followers_count",
 					"following_count",
-					"acct_created", 
+					"acct_created",
 					"location"])
 pass
 
@@ -42,16 +42,16 @@ def get_userinfo(name):
 
 	# create row
 	userinfo = [name.encode('utf-8'),
-				user.name.encode('utf-8'), 
+				user.name.encode('utf-8'),
 				user.description.encode('utf-8'),
 				user.followers_count,
 				user.friends_count,
 				user.created_at,
 				user.location.encode('utf-8')]
-	print userinfo
+	print(userinfo)
 
-	# write the csv	
-	with open('userinfo.csv', 'a') as f:
+	# write the csv
+	with open('userinfo.csv', 'w+') as f:
 		writer = csv.writer(f)
 		writer.writerows([userinfo])
 	pass
