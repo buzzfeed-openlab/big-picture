@@ -4,18 +4,14 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 import time
+from utils import open_csv_w
 
-
-#Twitter API credentials, you can get them here https://apps.twitter.com/
-consumer_key = ""
-consumer_secret = ""
-access_key = ""
-access_secret = ""
-
+# import authentication credentials
+from secrets import TWITTER_C_KEY, TWITTER_C_SECRET, TWITTER_A_KEY, TWITTER_A_SECRET
 
 #authorize twitter, initialize tweepy
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_key, access_secret)
+auth = tweepy.OAuthHandler(TWITTER_C_KEY, TWITTER_C_SECRET)
+auth.set_access_token(TWITTER_A_KEY, TWITTER_A_SECRET)
 api = tweepy.API(auth)
 
 # Twitter API limit handler; this helps you deal with the fact that Twitter only allows you to ping its API a set number of times
@@ -35,7 +31,7 @@ counter  = 0;
 searchterm = "\"Queen Bey\""
 
 # Open/Create a file to append data
-csvFile = open('%s-result.csv' % searchterm, 'a')
+csvFile = open_csv_w('%s-result.csv' % searchterm)
 #Use csv Writer
 csvWriter = csv.writer(csvFile)
 # these are the headers of your csv
@@ -53,7 +49,7 @@ for tweet in limit_handled(tweepy.Cursor(api.search,
                     # point of time you want the search to start
                     since="2017-01-10",
                     # point of time you want the search to end
-                    until="2017-02-02",
+                    until="2017-02-28",
                     lang="en").items()):
     #Write a row to the csv file/ I use encode utf-8
     csvWriter.writerow([tweet.id_str,

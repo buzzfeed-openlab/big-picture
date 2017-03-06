@@ -1,0 +1,160 @@
+/*
+ * styles.css
+ *
+ * @author: Chopping Block (choppinblock.com)
+ *
+ */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font: 16px/1.6 'Proxima Nova',"HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+	font-smooth: always;
+	text-align: center;
+	margin: 0 auto;
+	color: #858585;
+
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Your styles go here */
+#wrapper{
+	position:relative;
+}
+
+#container{
+	/*max-width: 600px;*/
+	width: 50%;
+  position: absolute;
+  margin: 2% auto 0 auto;
+	padding: 50px;
+  text-align: center;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button{
+	border-style: none;
+	background-color:#cccccc;
+	font: 16px/1.6 'Proxima Nova',"HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #FFFFFF;
+	font-smooth: always;
+	text-align: center;
+	text-decoration:none;
+	position: relative;
+	margin: 10px 10px 30px 10px;
+	border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+button:hover{
+	background-color:#858585;
+}
+
+button a, button a:hover{
+	text-decoration:none;
+	color: #FFFFFF;
+}
+
+
+i {
+	font-style: italic;
+	position: relative;
+	color: #CCCCCC;
+	margin-top: 10px;
+}
+
+
+.title {
+    font-weight: 500;
+    font-size: 1.4em;
+    line-height: 1.2em;
+}
+
+.dek {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 20px;
+	text-align: center;
+
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display:inline-block;
+    text-align: center;
+
+}
+
+.legend{
+	display:inline-block
+}
+
+
+@media (max-width: 600px) {
+  .dek {
+    padding: 0 5px;
+  }
+  #container{
+  	width:95%;
+  	padding:0;
+  }
+}
+
+
+/* Your styles go here */
