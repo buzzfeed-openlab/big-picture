@@ -44,7 +44,7 @@ $(document).ready(function () {
     tooltip: {
         formatter: function () {
             return '<b>' + this.point.category + '</b><br/>' +
-                'Number of ads served across 60+ sites:' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                'Number of ads served across sites:' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
         }
     },
 

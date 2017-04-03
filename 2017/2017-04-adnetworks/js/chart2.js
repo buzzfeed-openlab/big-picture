@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
 
-  var categories2 = ['Kixer','BlueKai','RevContent','Quantcast','eXelate','Google Syndication','ScoreCard Research Beacon','DoubleClick Ad Exchange-Seller','Google Adsense','DoubleClick']
+  var categories2 = ['BlueKai','Kixer','RevContent','Quantcast','eXelate','Google Syndication','ScoreCard Research Beacon','DoubleClick Ad Exchange-Seller','Google Adsense','DoubleClick']
 
 
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
     series: [{
         name: 'Most prominent trackers across fake news sites',
         color:'#7FCEC2',
-        data: [18,18,18,19,20,34,35,40,46,53]
+        data: [17,18,18,19,20,31,35,37,39,45]
     }]
   });
 
