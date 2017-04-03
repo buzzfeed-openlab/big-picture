@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
 
-  var categories3=['aol','bidgear','clickdealer','criteo.com','mantis','pixfuture','propel','teads','time2play-online.net banners','advertise.com','conversant','infolinks','time2play-online.net popunder','adblade','taboola','ad provider','feednetwork','earnify','mgid','content.ad','popunder','adsense','revcontent']
+  var categories3=['Aol','Bidgear','Clickdealer','Criteo.com','Mantis','Pixfuture','Propel','Teads','Advertise.com','Conversant','Infolinks','Adblade','Earnify','Time2play-online.net ','Taboola','Ad Provider','Feednetwork','Mgid','Popunder','Content.ad','Adsense','Revcontent']
 
 
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
     series: [{
         name: 'Most served ads',
         color:'#7FCEC2',
-        data: [1,1,1,1,1,1,1,1,1,2,2,2,2,3,4,5,5,6,7,9,9,17,22]
+        data: [1,1,1,1,1,1,1,1,2,2,2,3,3,3,4,5,5,7,8,9,17,22]
     }]
   });
 
