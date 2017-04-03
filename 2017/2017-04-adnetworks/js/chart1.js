@@ -2,7 +2,7 @@
 
 
 $(document).ready(function () {
-  var categories = ['Acxiom','Content.ad','AWeber','Kixer','Spoutable','Chameleon','Earnify','Yieldlab','Lotame','Teads','Tapad','ScoreCard Research Beacon','Adobe Audience Manager','Aggregate Knowledge','RevContent','DoubleClick','AddThis','Google Syndication','DoubleClick Ad Exchange-Seller','Google Adsense'];
+  var categories = ['Acxiom','Content.ad','AWeber','Kixer','Spoutable','Chameleon','Earnify','MediaMath','ScoreCard Research Beacon','Teads','StickyAds','Tapad','TradeDesk','Yahoo Ad Exchange','Adobe Audience Manager','BlueKai','Aggregate Knowledge','DoubleClick Ad Exchange-Seller','Google Adsense','Google Syndication'];
 
 
 
@@ -51,17 +51,17 @@ $(document).ready(function () {
     series: [{
         name: 'Most added trackers',
         color:'#7FCEC2',
-        data: [6,5,4,3,3,2,2,2,1,1,0,0,0,0,0,0,0,0,0,0]
+        data: [6,5,4,4,3,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0]
     },
     {
         name: 'Most removed trackers',
         color:'#FF6165',
-        data: [0,0,0,0,0,0,0,0,0,0,-6,-7,-7,-8,-9,-10,-13,-24,-25,-26]
+        data: [0,0,0,0,0,0,0,0,0,0,-5,-5,-5,-6,-6,-7,-9,-10,-15]
     }]
   });
 
 
-  
+
 });
 
 //... and end your pasting of the JavaScript snippet from JSFiddle here
