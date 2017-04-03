@@ -29,6 +29,7 @@ $(document).ready(function () {
         title: {
             text: null
         },
+        tickInterval: 5,
         labels: {
             formatter: function () {
                 return this.value;
