@@ -31,9 +31,9 @@ $(document).ready(function () {
         }
     },
     legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
+        layout: 'horizontal',
+        // align: 'right',
+        verticalAlign: 'top'
     },
 
     tooltip: {
