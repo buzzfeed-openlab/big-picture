@@ -1,0 +1,163 @@
+/*Chart colors*/
+
+.yellow1{color:#605D3A;}
+.yellow2{color:#BFBA73;}
+.yellow3{color:#FFEE00;}
+.yellow4{color:#FFF899;}
+.yellow5{color:#FFFCCC;}
+
+.orange1{color:#331F02;}
+.orange2{color:#673F05;}
+.orange3{color:#CE7D09;}
+.orange4{color:#D8973A;}
+.orange5{color:#EBCB9D;}
+
+.red1{color: #300906;}
+.red2{color: #75201A;}
+.red3{color: #E93F33;}
+.red4{color: #F28C85;}
+.red5{color: #FCE8E7;}
+
+.green1{color: #0A2C27;}
+.green2{color: #15574D;}
+.green3{color: #01f7b6;}
+.green4{color: #7FCEC2;}
+.green5{color: #D4EFEB;}
+
+.blue1{color: #001E3C;}
+.blue2{color: #003C77;}
+.blue3{color: #0077EE;}
+.blue4{color: #66ADF5;}
+.blue5{color: #CCE4FC;}
+
+
+.yellow1-bg{background-color:#605D3A;}
+.yellow2-bg{background-color:#BFBA73;}
+.yellow3-bg{background-color:#FFEE00;}
+.yellow4-bg{background-color:#FFF899;}
+.yellow5-bg{background-color:#FFFCCC;}
+
+.orange1-bg{background-color:#331F02;}
+.orange2-bg{background-color:#673F05;}
+.orange3-bg{background-color:#CE7D09;}
+.orange4-bg{background-color:#D8973A;}
+.orange5-bg{background-color:#EBCB9D;}
+
+.red1-bg{background-color: #300906;}
+.red2-bg{background-color: #75201A;}
+.red3-bg{background-color: #E93F33;}
+.red4-bg{background-color: #F28C85;}
+.red5-bg{background-color: #FCE8E7;}
+
+.green1-bg{background-color: #0A2C27;}
+.green2-bg{background-color: #15574D;}
+.green3-bg{background-color: #01f7b6;}
+.green4-bg{background-color: #7FCEC2;}
+.green5-bg{background-color: #D4EFEB;}
+
+.blue1-bg{background-color: #001E3C;}
+.blue2-bg{background-color: #003C77;}
+.blue3-bg{background-color: #0077EE;}
+.blue4-bg{background-color: #66ADF5;}
+.blue5-bg{background-color: #CCE4FC;}
+
+/* load fonts */
+@font-face {
+  font-family: "Proxima Nova";
+  src: url('bf_webfonts/ProximaNova-Reg-webfont.eot'); /* IE9 Compat Modes */
+  src: url('bf_webfonts/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('bf_webfonts/ProximaNova-Reg-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('bf_webfonts/ProximaNova-Reg-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('bf_webfonts/ProximaNova-Reg-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('bf_webfonts/ProximaNova-Reg-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url('bf_webfonts/ProximaNova-Bold-webfont.eot'); /* IE9 Compat Modes */
+  src: url('bf_webfonts/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('bf_webfonts/ProximaNova-Bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('bf_webfonts/ProximaNova-Bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('bf_webfonts/ProximaNova-Bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('bf_webfonts/ProximaNova-Bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+/* setting fonts */
+
+body{
+	background-color: #fff;
+	font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family:"Proxima Nova Bold",Helvetica,Arial,sans-serif;
+	padding: 25px 0;
+	color: #383838;
+}
+
+p{
+  font-family:'Proxima Nova', Helvetica, sans-serif;
+}
+
+/* re-useable chart styles*/
+
+.notes{
+	font-size: 0.8em;
+	font-style: italic;
+	color: #383838;
+	float: left;
+	margin: 15px 0px 30px 0px;
+	width: 100%;
+}
+
+/* app specific */
+
+.container{
+	width: 100%;
+
+}
+
+.chart_box_6col,
+.chart_box_12col{
+  height:500px;
+  float: left;
+}
+
+#page_growth_left,
+#page_growth_right{
+	height:600px;
+}
+.chart_box_6col{
+	width:50%;
+}
+
+.chart_box_12col{
+	width:100%;
+}
+
+
+
+@media (max-width:720px){
+   .chart_box_6col{
+    height: 500px;
+    width:100%;
+   }
+}
+
+
+
+/* different views */
+.template-view1 .view,
+.template-view2 .view,
+.template-view3 .view,
+.template-view4 .view {
+  display: none;
+}
+
+/* line 27, ../sass/style.scss */
+.template-view1 .view1,
+.template-view2 .view2,
+.template-view3 .view3,
+.template-view4 .view4 {
+  display: block;
+}
