@@ -42,6 +42,13 @@ pip install -r requirements.txt
 
 You might want to consider using a virtual environment:
 
+```
+virtualenv social
+source ./social/bin/activate
+pip install -r scripts/requirements.txt 
+```
+
+That will create a new virtual environment called "social", activate it, and install the requirements in that venv.  When you want your old shell back you can use `deactivate` to shut down the virutal environment until you need it again. 
 
 
 3. Make a secrets.py file that is modeled after the `secrets.py.example` file by going into the `scripts` directory and running these bash commands
@@ -62,7 +69,7 @@ Now you have a `secrets.py` file! 🤗 Open it up in a text editor of your choic
 
 ### Using Facebook's API
 
-Facebook does not allow you to
+Facebook does not allow you to... TK
 
 #### Scripts
 * [fb_get_posts_fb_group.py](https://github.com/buzzfeed-openlab/big-picture/blob/master/scripts/scripts/fb_get_posts_fb_group.py) or [fb_get_posts_fb_group_multiple.py](https://github.com/buzzfeed-openlab/big-picture/blob/master/scripts/scripts/fb_get_posts_fb_group_multiple.py): These scripts allow you to gather data from _public_ Facebook groups, either from just one or multiple groups. Adapted from [@minimaxir](https://github.com/minimaxir/facebook-page-post-scraper)'s scripts.
