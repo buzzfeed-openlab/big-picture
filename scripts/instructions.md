@@ -16,7 +16,6 @@ This is a growing list of scripts we've put together to make social data mining 
 ### Setup
 
 
-
 #### Before you begin
 
 1. If you don’t already have Python installed, start by getting [Python up and running](http://docs.python-guide.org/en/latest/starting/installation/). Also have `git` installed.
@@ -25,9 +24,10 @@ This is a growing list of scripts we've put together to make social data mining 
 
 #### Twitter and Facebook-related preparations
 
-1. You need to get developer oauth credentials from the social media platforms you want to tap into. Oauth credentials are _like_ an ID and password (often referred to as an app ID and secret respectively) that you create for an app or a script to access the data stream that a social media company provides. This data stream — also known as a company's Application Program Interface, or API — is often accessible using these credentials through a link (for example, this is what one of these queries could look like https://graph.facebook.com/v2.6/BuzzFeed/posts/?fields=message/&access_token=YOURID|YOURSECRET). Here's where you can get them:
-Twitter: [https://apps.twitter.com/](https://apps.twitter.com/)
-Facebook: [https://developers.facebook.com/](https://developers.facebook.com/)
+1. You need to get developer oauth credentials from the social media platforms you want to tap into. Oauth credentials are _like_ an ID and password (often referred to as an app ID and secret respectively) that you create for an app or a script to access the data stream that a social media company provides. This data stream — also known as a company's Application Program Interface, or API — is often accessible using these credentials through a link (for example, this is what one of these queries could look like https://graph.facebook.com/v2.6/BuzzFeed/posts/?fields=message/&access_token=YOURID|YOURSECRET). Here's where you can get them:  
+
++ Twitter: [https://apps.twitter.com/](https://apps.twitter.com/)
++ Facebook: [https://developers.facebook.com/](https://developers.facebook.com/)
 
 ####  Setting up the scripts
 1. Open up your Terminal and go to the folder where you want to clone this repository of code using the `cd` bash command.
@@ -39,6 +39,11 @@ cd social-data-scripts
 ```
 pip install -r requirements.txt
 ```
+
+You might want to consider using a virtual environment:
+
+
+
 3. Make a secrets.py file that is modeled after the `secrets.py.example` file by going into the `scripts` directory and running these bash commands
 ```
 cd scripts
